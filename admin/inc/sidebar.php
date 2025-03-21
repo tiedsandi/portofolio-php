@@ -17,7 +17,7 @@
                         <a class="nav-link" href="?page=experience">Experience<i class="fa fa-star"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?page=service">Service<i class="fa fa-tasks"></i></a>
+                        <a class="nav-link" href="?page=skills">Service<i class="fa fa-tasks"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="?page=portfolio">Portfolio<i class="fa fa-file-archive"></i></a>

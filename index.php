@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Resume Website Template Free Download</title>
+    <title>Resume Fachran Sandi</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Resume Website Template Free Download" name="keywords">
     <meta content="Resume Website Template Free Download" name="description">
@@ -74,7 +74,7 @@
                     <p>I'm</p>
                     <h1>Fachran Sandi</h1>
                     <h2></h2>
-                    <div class="typed-text">Web Designer, Web Developer, Front End Developer, Back End Developer</div>
+                    <div class="typed-text">Web Designer, Web Developer, FrontEnd Developer, BackEnd Developer</div>
                 </div>
             </div>
             <!-- Header End -->
@@ -82,8 +82,8 @@
             <!-- Large Button Start -->
             <div class="large-btn">
                 <div class="content-inner">
-                    <!-- <a class="btn" href="#"><i class="fa fa-download"></i>Resume</a>
-                    <a class="btn" href="#"><i class="fa fa-hands-helping"></i>Hire Me</a> -->
+                    <a class="btn" href="#"><i class="fa fa-download"></i>Resume</a>
+                    <a class="btn" href="#"><i class="fa fa-hands-helping"></i>Hire Me</a>
                 </div>
             </div>
             <!-- Large Button End -->
@@ -100,10 +100,7 @@
                         </div>
                         <div class="col-md-6 col-lg-7">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu suscipit orci. Donec
-                                molestie velit id libero blandit, quis suscipit urna suscipit. Donec aliquet erat eu
-                                lacinia iaculis. Ut tempor tellus eu sem pharetra feugiat. Proin libero ligula, gravida
-                                at porttitor eget.
+                            Pengembangan Aplikasi Web fullstack, frontend, & backend. Saya selalu tertarik pada tantangan baru dan menikmati bekerja dalam tim untuk menciptakan solusi yang inovatif.
                             </p>
                             <a class="btn" href="#">Hire Me</a>
                         </div>

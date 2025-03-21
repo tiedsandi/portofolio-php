@@ -33,7 +33,7 @@
             if(isset($_GET['page']) && file_exists('content/'. $_GET['page'] .'.php')) {
                 include 'content/'. $_GET['page'] .'.php';
             }else {
-                include 'content/about-me.php';
+                include 'content/types.php';
             }
         ?>
         </div>
