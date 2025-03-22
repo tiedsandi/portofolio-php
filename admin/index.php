@@ -33,6 +33,9 @@ if(empty($_SESSION['nama'])) {
     <link href="../lib/slick/slick-theme.css" rel="stylesheet">
     <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
+    <!-- summernote -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-bs4.min.css" rel="stylesheet">
+
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
 
@@ -70,8 +73,18 @@ if(empty($_SESSION['nama'])) {
     <script src="../lib/isotope/isotope.pkgd.min.js"></script>
     <script src="../lib/lightbox/js/lightbox.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-bs4.min.js"></script>
+
     <!-- Template Javascript -->
     <script src="../js/main.js"></script>
+
+    <script>
+      $('.summernote').summernote({
+        placeholder: 'Tambahkan penjelasan disini',
+        tabsize: 2,
+        height: 100
+      });
+    </script>
 </body>
 
 </html>

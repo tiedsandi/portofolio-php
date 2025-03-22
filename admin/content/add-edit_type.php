@@ -23,6 +23,10 @@
     $id = $_GET['id'];
     $query = mysqli_query($conn, "SELECT * FROM types WHERE id = $id");
     $row = mysqli_fetch_assoc($query);
+
+    if (mysqli_num_rows($query) < 1) {
+        header("Location: ?page=type");
+    }
   }
 
   if(isset($_POST['edit'])){
@@ -50,7 +54,7 @@
 <div class="about">
   <div class="content-inner">
     <div class="content-header d-flex justify-content-between">
-        <h2><?= isset($_GET['id'])? 'Edit':'Add' ?> type</h2>
+        <h2><?= isset($_GET['id'])? 'Ubah':'Tambah' ?> type</h2>
     </div>
     <?php if (isset($_GET['status']) && $_GET['status'] == "gagal") { ?>
         <div class="alert alert-danger" role="alert">
@@ -60,7 +64,7 @@
     <form action="" method="POST">
       <div class="row align-items-center">
           <div class="form-group col-md-6">
-            <label for="type_name">Type Name</label>
+            <label for="type_name">Nama Tipe*</label>
             <input type="text" class="form-control"
                 name="type_name"
                 value="<?php echo isset($_GET['id']) ? $row['type_name'] : '' ?>"
