@@ -4,7 +4,7 @@
             <!-- Nama User -->
             <div class="text-center w-100 py-3 text-white">
                 <h5 class="mb-0">👋 Selamat Datang</h5>
-                <p class="mb-2 font-weight-bold"><?= $_SESSION['nama'] ?? 'Guest'; ?></p>
+                <p class="mb-2 font-weight-bold"><?= $_SESSION['nama']; ?></p>
             </div>
 
             <!-- Tombol Toggle (Mobile) -->

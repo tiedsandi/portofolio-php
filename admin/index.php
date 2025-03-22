@@ -1,4 +1,5 @@
 <?php 
+ob_start();
 session_start();
 include 'inc/koneksi.php';
 
@@ -7,6 +8,7 @@ if(empty($_SESSION['nama'])) {
     exit();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,3 +75,5 @@ if(empty($_SESSION['nama'])) {
 </body>
 
 </html>
+
+<?php ob_end_flush(); ?>
