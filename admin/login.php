@@ -1,3 +1,38 @@
+<?php
+session_start();
+
+if (isset($_POST['login'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Data user statis (tanpa database)
+    $userData = [
+        "email" => "admin@admin.com",
+        "password" => "123", // Simpan dalam bentuk hash jika ingin lebih aman
+        "name" => "Admin",
+    ];
+
+    // Validasi email
+    if ($email === $userData['email']) {
+        // Validasi password
+        if ($password === $userData['password']) {
+            $_SESSION['nama'] = $userData['name'];
+
+            header("location: index.php");
+            exit();
+        } else {
+            header("location: login.php?error=password_salah");
+            exit();
+        }
+    } else {
+        header("location: login.php?error=email_tidak_ditemukan");
+        exit();
+    }
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -24,19 +59,25 @@
 <div class="container d-flex justify-content-center">
     <div class="login-container">
         <h4 class="text-center mb-4">Login</h4>
-        <form>
+        <?php if (isset($_GET['error'])) { ?>
+            <div class="alert alert-danger" role="alert">
+                <?php if ($_GET['error'] == "email_tidak_ditemukan") {
+                    echo "Email tidak ditemukan!";
+                } else if ($_GET['error'] == "password_salah") {
+                    echo "Password salah!";
+                } ?>
+            </div>
+        <?php } ?>
+        <form method="POST" action="">
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" class="form-control" placeholder="Masukkan email" required>
+                <input type="email" name="email" class="form-control" placeholder="Masukkan email" required>
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" class="form-control" placeholder="Masukkan password" required>
+                <input type="password" name="password" class="form-control" placeholder="Masukkan password" required>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Login</button>
-            <div class="text-center mt-3">
-                <a href="#">Lupa Password?</a> | <a href="#">Buat Akun</a>
-            </div>
+            <button type="submit" class="btn btn-primary btn-block" name="login">Login</button>
         </form>
     </div>
 </div>

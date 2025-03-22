@@ -1,6 +1,11 @@
 <?php 
 session_start();
 include 'inc/koneksi.php';
+
+if(empty($_SESSION['nama'])) {
+    header("location: login.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
