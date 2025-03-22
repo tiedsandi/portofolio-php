@@ -1,3 +1,8 @@
+<?php 
+session_start();
+include 'inc/koneksi.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +28,12 @@
 
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
+
+    <style>
+        .navbar-expand-md .navbar-nav .nav-link.aktif {
+            color: #ff6f61;
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
@@ -33,7 +44,7 @@
             if(isset($_GET['page']) && file_exists('content/'. $_GET['page'] .'.php')) {
                 include 'content/'. $_GET['page'] .'.php';
             }else {
-                include 'content/types.php';
+                include 'content/type.php';
             }
         ?>
         </div>

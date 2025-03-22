@@ -40,22 +40,22 @@
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="#header">Home<i class="fa fa-home"></i></a>
+                                <a class="nav-link" href="#header">Beranda<i class="fa fa-home"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#about">About<i class="fa fa-address-card"></i></a>
+                                <a class="nav-link" href="#about">Tentang Saya<i class="fa fa-address-card"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#experience">Experience<i class="fa fa-star"></i></a>
+                                <a class="nav-link" href="#experience">Pengalaman<i class="fa fa-star"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#service">Service<i class="fa fa-tasks"></i></a>
+                                <a class="nav-link" href="#service">Servis<i class="fa fa-tasks"></i></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#portfolio">Portfolio<i class="fa fa-file-archive"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#contact">Contact<i class="fa fa-envelope"></i></a>
+                                <a class="nav-link" href="#contact">Kontak<i class="fa fa-envelope"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -71,7 +71,7 @@
             <!-- Header Start -->
             <div class="header" id="header">
                 <div class="content-inner">
-                    <p>I'm</p>
+                    <p>Hi,</p>
                     <h1>Fachran Sandi</h1>
                     <h2></h2>
                     <div class="typed-text">Web Designer, Web Developer, FrontEnd Developer, BackEnd Developer</div>
@@ -92,7 +92,7 @@
             <div class="about" id="about">
                 <div class="content-inner">
                     <div class="content-header">
-                        <h2>About Me</h2>
+                        <h2>Tentang Saya</h2>
                     </div>
                     <div class="row align-items-center">
                         <div class="col-md-6 col-lg-5">
@@ -155,7 +155,7 @@
             <div class="education" id="education">
                 <div class="content-inner">
                     <div class="content-header">
-                        <h2>Education</h2>
+                        <h2>Pendidikan</h2>
                     </div>
                     <div class="row align-items-center">
                         <div class="col-md-6">
@@ -195,7 +195,7 @@
             <div class="experience" id="experience">
                 <div class="content-inner">
                     <div class="content-header">
-                        <h2>Experience</h2>
+                        <h2>Pengalaman</h2>
                     </div>
                     <div class="row align-items-center">
                         <div class="col-md-6">
@@ -243,7 +243,7 @@
             <div class="service" id="service">
                 <div class="content-inner">
                     <div class="content-header">
-                        <h2>Service</h2>
+                        <h2>Servis</h2>
                     </div>
                     <div class="row align-items-center">
                         <div class="col-md-6">
@@ -376,7 +376,7 @@
             <div class="review" id="review">
                 <div class="content-inner">
                     <div class="content-header">
-                        <h2>Review</h2>
+                        <h2>Ulasan</h2>
                     </div>
                     <div class="row align-items-center review-slider">
                         <div class="col-md-12">
@@ -442,7 +442,7 @@
             <div class="contact" id="contact">
                 <div class="content-inner">
                     <div class="content-header">
-                        <h2>Contact</h2>
+                        <h2>Kontak</h2>
                     </div>
                     <div class="row align-items-center">
                         <div class="col-md-6">
