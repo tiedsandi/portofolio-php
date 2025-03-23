@@ -17,7 +17,7 @@
                 <ul class="nav navbar-nav w-100">
                     <?php $currentPage = $_GET['page'] ?? 'education'; ?>
                     <li class="nav-item">
-                        <a class="nav-link <?= $currentPage === 'project' ? 'aktif' : '' ?>" href="?page=project">
+                        <a class="nav-link <?= $currentPage === 'porto' ? 'aktif' : '' ?>" href="?page=porto">
                             <i class="fa fa-folder-open"></i> Portfolio
                         </a>
                     </li>

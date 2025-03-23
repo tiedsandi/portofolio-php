@@ -54,7 +54,7 @@
 <div class="about">
   <div class="content-inner">
     <div class="content-header d-flex justify-content-between">
-        <h2><?= isset($_GET['id'])? 'Ubah':'Tambah' ?> type</h2>
+        <h2><?= isset($_GET['id'])? 'Ubah':'Tambah' ?> Tipe</h2>
     </div>
     <?php if (isset($_GET['status']) && $_GET['status'] == "gagal") { ?>
         <div class="alert alert-danger" role="alert">
