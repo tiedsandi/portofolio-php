@@ -4,7 +4,7 @@
     $level = $_POST['level'];
 
     // cek if null datanya
-    if (empty($skill_name) || empty($level)) {
+    if (empty($skill_name)) {
         header("Location: ?page=add-edit_skill&status=gagal");
         exit();
     }
@@ -34,7 +34,7 @@
     $skill_name = $_POST['skill_name'];
     $level = $_POST['level'];
     // cek if null datanya
-    if (empty($skill_name) || empty($level)) {
+    if (empty($skill_name)) {
         $idEdit = $_GET['id'] ?? $_POST['id'] ?? 0; 
         header("Location: ?page=add-edit_skill&status=gagal&id=$idEdit");
         exit();
