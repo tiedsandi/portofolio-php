@@ -1,3 +1,40 @@
+<?php 
+    include 'admin/inc/koneksi.php';
+
+    // get type
+    $queryT = mysqli_query($conn, "SELECT * FROM types 
+        ORDER BY type_name ASC");
+
+    $rowsT = mysqli_fetch_all($queryT, MYSQLI_ASSOC);
+
+    // get skill
+    $queryS = mysqli_query($conn, "SELECT * FROM skills 
+        ORDER BY skill_name ASC");
+
+    $rowsS = mysqli_fetch_all($queryS, MYSQLI_ASSOC);
+
+    // get Service
+    $querySe = mysqli_query($conn, "SELECT * FROM services 
+            ORDER BY service_name ASC");
+    $rowsSe = mysqli_fetch_all($querySe, MYSQLI_ASSOC);
+
+    // get Portfolio
+    $queryP = mysqli_query($conn, "SELECT p.*, t.type_name  FROM projects p LEFT JOIN types t ON p.id_type = t.id
+            ORDER BY project_name ASC");
+    $rowsP = mysqli_fetch_all($queryP, MYSQLI_ASSOC);
+
+    // get Experience
+    $queryEx = mysqli_query($conn, "SELECT * FROM experiences 
+            ORDER BY experience_name ASC");
+    $rowsEx = mysqli_fetch_all($queryEx, MYSQLI_ASSOC);
+
+    // get Education
+    $queryEd = mysqli_query($conn, "SELECT * FROM educations 
+            ORDER BY education_name ASC");
+    $rowsEd = mysqli_fetch_all($queryEd, MYSQLI_ASSOC);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,46 +98,7 @@
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
     <div class="wrapper">
-        <div class="sidebar">
-            <div class="sidebar-header">
-                <img src="img/profile.jpg" alt="Image">
-            </div>
-            <div class="sidebar-content">
-                <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-                    <a href="#" class="navbar-brand">Navigation</a>
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="nav navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#header">Beranda<i class="fa fa-home"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#about">Tentang Saya<i class="fa fa-address-card"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#experience">Pengalaman<i class="fa fa-star"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#service">Servis<i class="fa fa-tasks"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#portfolio">Portfolio<i class="fa fa-file-archive"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#contact">Kontak<i class="fa fa-envelope"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <div class="sidebar-footer">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
+        <?php include 'inc/sidebar.php'; ?>
         <div class="content">
             <!-- Header Start -->
             <div class="header" id="header">
@@ -116,8 +114,8 @@
             <!-- Large Button Start -->
             <div class="large-btn">
                 <div class="content-inner">
-                    <a class="btn" href="#"><i class="fa fa-download"></i>Resume</a>
-                    <a class="btn" href="#"><i class="fa fa-hands-helping"></i>Hire Me</a>
+                    <!-- <a class="btn" href="#"><i class="fa fa-download"></i>Resume</a>
+                    <a class="btn" href="#"><i class="fa fa-hands-helping"></i>Hire Me</a> -->
                 </div>
             </div>
             <!-- Large Button End -->
@@ -139,47 +137,25 @@
                             <a class="btn" href="#">Hire Me</a>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="skills">
-                                <div class="skill-name">
-                                    <p>Design</p>
-                                    <p>85%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                                <div class="skill-name">
-                                    <p>SEO</p>
-                                    <p>95%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
+                    <div class="row"> 
+                        <?php foreach ($rowsS as $rowS) : ?>
+                            <div class="col-md-6">
+                                <div class="skills">
+                                    <div class="skill-name">
+                                        <p>
+                                            <?php echo $rowS['skill_name'] ?>
+                                        </p>
+                                        <p>
+                                            <?php echo $rowS['level'] ?>%
+                                        </p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $rowS['level'] ?>" aria-valuemin="0"
+                                            aria-valuemax="100"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="skills">
-                                <div class="skill-name">
-                                    <p>Development</p>
-                                    <p>90%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                                <div class="skill-name">
-                                    <p>Marketing</p>
-                                    <p>85%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach ?>
                     </div>
                 </div>
             </div>
@@ -192,34 +168,19 @@
                         <h2>Pendidikan</h2>
                     </div>
                     <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <div class="edu-col">
-                                <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
-                                <h3>Master Degree</h3>
-                                <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
+                        <?php foreach ($rowsEd as $rowEd) : ?>
+                            <div class="col-md-6">
+                                <div class="edu-col">
+                                    <span>
+                                        <?php echo date("d-M-Y", strtotime($rowEd['start_date'])) ?>
+                                        <i>to</i> 
+                                        <?php echo date("d-M-Y", strtotime($rowEd['finish_date'])) ?>
+                                    </span>
+                                    <h3><?php echo $rowEd['education_name'] ?></h3>
+                                    <p><?php echo $rowEd['content'] ?></p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="edu-col">
-                                <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
-                                <h3>Bachelor Degree</h3>
-                                <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="edu-col">
-                                <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
-                                <h3>Associate Degree</h3>
-                                <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="edu-col">
-                                <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
-                                <h3>High School</h3>
-                                <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
-                            </div>
-                        </div>
+                        <?php endforeach ?>
                     </div>
                 </div>
             </div>
@@ -232,42 +193,21 @@
                         <h2>Pengalaman</h2>
                     </div>
                     <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <div class="exp-col">
-                                <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
-                                <h3>Codex Solution</h3>
-                                <h4>San Francisco, CA</h4>
-                                <h5>Project Manager</h5>
-                                <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
+                        <?php foreach ($rowsEx as $rowEx) : ?>
+                            <div class="col-md-6">
+                                <div class="exp-col">
+                                    <span>
+                                        <?php echo date("d-M-Y", strtotime($rowEx['start_date'])) ?>
+                                        <i>to</i> 
+                                        <?php echo date("d-M-Y", strtotime($rowEx['finish_date'])) ?>
+                                    </span>
+                                    <h3><?= $rowEx['experience_name'] ?></h3>
+                                    <h4><?= $rowEx['position'] ?></h4>
+                                    <h5><?= $rowEx['location'] ?></h5>
+                                    <p><?= $rowEx['content'] ?></p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="exp-col">
-                                <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
-                                <h3>Soft Solution Ltd</h3>
-                                <h4>San Francisco, CA</h4>
-                                <h5>Web Developer</h5>
-                                <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="exp-col">
-                                <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
-                                <h3>ABC Soft Ltd</h3>
-                                <h4>San Francisco, CA</h4>
-                                <h5>Web Designer</h5>
-                                <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="exp-col">
-                                <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
-                                <h3>Soft Agency</h3>
-                                <h4>San Francisco, CA</h4>
-                                <h5>Graphic Designer</h5>
-                                <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
-                            </div>
-                        </div>
+                        <?php endforeach ?>
                     </div>
                 </div>
             </div>
@@ -280,34 +220,16 @@
                         <h2>Servis</h2>
                     </div>
                     <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <div class="srv-col">
-                                <i class="fa fa-desktop"></i>
-                                <h3>Web Design</h3>
-                                <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
+                        <?php foreach ($rowsSe as $rowSe) : ?>
+                            <div class="col-md-6">
+                                <div class="srv-col">
+                                    <i class="fa <?= $rowSe['icon'] ?>"></i>
+                                    <h3><?= $rowSe['service_name'] ?></h3>
+                                    <p><?= $rowSe['description'] ?></p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="srv-col">
-                                <i class="fa fa-laptop"></i>
-                                <h3>Web Development</h3>
-                                <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="srv-col">
-                                <i class="fa fa-search"></i>
-                                <h3>SEO</h3>
-                                <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="srv-col">
-                                <i class="fa fa-envelope-open-text"></i>
-                                <h3>Digital Marketing</h3>
-                                <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
-                            </div>
-                        </div>
+                        <?php endforeach ?>
+
                     </div>
                 </div>
             </div>
@@ -323,84 +245,27 @@
                         <div class="col-lg-12">
                             <ul id="portfolio-flters">
                                 <li data-filter="*" class="filter-active">All</li>
-                                <li data-filter=".web-des">Design</li>
-                                <li data-filter=".web-dev">Development</li>
-                                <li data-filter=".dig-mar">Marketing</li>
+                                <?php foreach ($rowsT as $rowT) : ?>
+                                    <li data-filter=".<?= $rowT['id'] ?>"><?= $rowT['type_name'] ?></li>
+                                <?php endforeach ?>                           
                             </ul>
                         </div>
                     </div>
                     <div class="row portfolio-container">
-                        <div class="col-lg-4 col-md-6 portfolio-item web-des">
-                            <div class="portfolio-wrap">
-                                <figure>
-                                    <img src="img/portfolio-1.jpg" class="img-fluid" alt="">
-                                    <a href="img/portfolio-1.jpg" data-lightbox="portfolio" data-title="Project Name"
-                                        class="link-preview" title="Preview"><i class="fa fa-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
-                                    <a class="portfolio-title" href="#">Project Name <span>Web Design</span></a>
-                                </figure>
+                        <?php foreach ($rowsP as $rowP) : ?>
+                            <div class="col-lg-4 col-md-6 portfolio-item <?= $rowP['id_type'] ?>">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="admin/assets/uploads/<?= $rowP['photo'] ?>" class="img-fluid" alt="">
+                                        <a href="admin/assets/uploads/<?= $rowP['photo'] ?>" class="link-preview" data-lightbox="portfolio"
+                                            data-title="<?= $rowP['project_name'] ?>" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a href="<?= $rowP['link_repository'] ?>" class="link-details" title="More Details" target="_blank" rel="noopener noreferrer"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="#"><?= $rowP['project_name'] ?> <span><?= $rowP['type_name'] ?></span></a>
+                                    </figure>
+                                </div>
                             </div>
-                        </div>
+                        <?php endforeach ?>
 
-                        <div class="col-lg-4 col-md-6 portfolio-item web-des">
-                            <div class="portfolio-wrap">
-                                <figure>
-                                    <img src="img/portfolio-2.jpg" class="img-fluid" alt="">
-                                    <a href="img/portfolio-2.jpg" class="link-preview" data-lightbox="portfolio"
-                                        data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
-                                    <a class="portfolio-title" href="#">Project Name <span>Web Design</span></a>
-                                </figure>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 portfolio-item web-dev">
-                            <div class="portfolio-wrap">
-                                <figure>
-                                    <img src="img/portfolio-3.jpg" class="img-fluid" alt="">
-                                    <a href="img/portfolio-3.jpg" class="link-preview" data-lightbox="portfolio"
-                                        data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
-                                    <a class="portfolio-title" href="#">Project Name <span>Web Development</span></a>
-                                </figure>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 portfolio-item web-dev">
-                            <div class="portfolio-wrap">
-                                <figure>
-                                    <img src="img/portfolio-4.jpg" class="img-fluid" alt="">
-                                    <a href="img/portfolio-4.jpg" class="link-preview" data-lightbox="portfolio"
-                                        data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
-                                    <a class="portfolio-title" href="#">Project Name <span>Web Development</span></a>
-                                </figure>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 portfolio-item dig-mar">
-                            <div class="portfolio-wrap">
-                                <figure>
-                                    <img src="img/portfolio-5.jpg" class="img-fluid" alt="">
-                                    <a href="img/portfolio-5.jpg" class="link-preview" data-lightbox="portfolio"
-                                        data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
-                                    <a class="portfolio-title" href="#">Project Name <span>Digital Marketing</span></a>
-                                </figure>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 portfolio-item dig-mar">
-                            <div class="portfolio-wrap">
-                                <figure>
-                                    <img src="img/portfolio-6.jpg" class="img-fluid" alt="">
-                                    <a href="img/portfolio-6.jpg" class="link-preview" data-lightbox="portfolio"
-                                        data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
-                                    <a class="portfolio-title" href="#">Project Name <span>Digital Marketing</span></a>
-                                </figure>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

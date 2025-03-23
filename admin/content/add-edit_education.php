@@ -98,7 +98,7 @@
           </div>
       </div>
       <div class="d-flex">
-          <a href="?page=type" style="background-color:white; border: 1px solid #FF6F61" class="btn  mr-2">Batal</a>
+          <a href="?page=education" style="background-color:white; border: 1px solid #FF6F61" class="btn  mr-2">Batal</a>
           <?php if(isset($_GET['id'])) :?>
               <button type="submit" class="btn " name="edit">Ubah</button>
           <?php else :?>
