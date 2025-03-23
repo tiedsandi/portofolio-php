@@ -23,6 +23,40 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+    .mapouter {
+        position: relative;
+        text-align: right;
+        width: 100%;
+        height: 500px;
+    }
+
+    .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        width: 100%;
+        height: 500px;
+    }
+
+    .gmap_canvas iframe {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .mapouter {
+            height: 300px;
+        }
+        .gmap_canvas {
+            height: 300px;
+        }
+    }
+</style>
+
+
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
@@ -373,7 +407,7 @@
             <!-- Portfolio Start -->
 
             <!-- Review Start -->
-            <div class="review" id="review">
+            <!-- <div class="review" id="review">
                 <div class="content-inner">
                     <div class="content-header">
                         <h2>Ulasan</h2>
@@ -435,7 +469,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Review End -->
 
             <!-- Contact Start -->
@@ -447,12 +481,12 @@
                     <div class="row align-items-center">
                         <div class="col-md-6">
                             <div class="contact-info">
-                                <p><i class="fa fa-user"></i>Michael Miller</p>
+                                <p><i class="fa fa-user"></i>Fachran Sandi</p>
                                 <p><i class="fa fa-tag"></i>Web Designer & Developer</p>
-                                <p><i class="fa fa-envelope"></i><a href="mailto:info@example.com">info@example.com</a>
+                                <p><i class="fa fa-envelope"></i><a href="mailto:fachransandi@gmail.com">fachransandi@gmail.com</a>
                                 </p>
-                                <p><i class="fa fa-phone"></i><a href="tel:+1234567890">+123-456-7890</a></p>
-                                <p><i class="fa fa-map-marker"></i>123 Street, Los Angeles, CA, USA</p>
+                                <p><i class="fa fa-phone"></i><a href="tel:+6281398688964">+62-813-9868-8964</a></p>
+                                <p><i class="fa fa-map-marker"></i>56 Basuki, Cipayung, Jakarta, Indonesia</p>
                                 <div class="social">
                                     <a class="btn" href=""><i class="fab fa-twitter"></i></a>
                                     <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
@@ -463,7 +497,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form">
+                            <!-- <div class="form">
                                 <form>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
@@ -481,6 +515,15 @@
                                     </div>
                                     <div><button class="btn" type="submit">Send Message</button></div>
                                 </form>
+                            </div> -->
+                            <!-- google maps -->
+                            <div class="mapouter">
+                                <div class="gmap_canvas">
+                                    <iframe width="600" height="500" id="gmap_canvas"
+                                        src="https://maps.google.com/maps?q=Cilangkap,%20Jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                                    </iframe>
+                                </div>
                             </div>
                         </div>
                     </div>

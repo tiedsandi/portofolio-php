@@ -15,7 +15,7 @@
             <!-- Menu Sidebar -->
             <div class="collapse navbar-collapse w-100" id="navbarCollapse">
                 <ul class="nav navbar-nav w-100">
-                    <?php $currentPage = $_GET['page'] ?? 'education'; ?>
+                    <?php $currentPage = $_GET['page'] ?? 'porto'; ?>
                     <li class="nav-item">
                         <a class="nav-link <?= $currentPage === 'porto' ? 'aktif' : '' ?>" href="?page=porto">
                             <i class="fa fa-folder-open"></i> Portfolio
@@ -40,11 +40,11 @@
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link <?= $currentPage === 'review' ? 'aktif' : '' ?>" href="?page=review">
                             <i class="fa fa-star"></i> Ulasan
                         </a>
-                    </li>
+                    </li> -->
                    
                     <li class="nav-item">
                         <a class="nav-link <?= $currentPage === 'service' ? 'aktif' : '' ?>" href="?page=service">
@@ -52,11 +52,11 @@
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link <?= $currentPage === 'message' ? 'aktif' : '' ?>" href="?page=message">
                             <i class="fa fa-comments"></i> Pesan
                         </a>
-                    </li>
+                    </li> -->
                    
                     <li class="nav-item">
                         <a class="nav-link <?= $currentPage === 'type' ? 'aktif' : '' ?>" href="?page=type">

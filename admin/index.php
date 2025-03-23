@@ -54,7 +54,7 @@ if(empty($_SESSION['nama'])) {
             if(isset($_GET['page']) && file_exists('content/'. $_GET['page'] .'.php')) {
                 include 'content/'. $_GET['page'] .'.php';
             }else {
-                include 'content/type.php';
+                include 'content/porto.php';
             }
         ?>
         </div>
