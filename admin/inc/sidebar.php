@@ -17,40 +17,47 @@
                 <ul class="nav navbar-nav w-100">
                     <?php $currentPage = $_GET['page'] ?? 'education'; ?>
                     <li class="nav-item">
-                        <a class="nav-link <?= $currentPage === 'education' ? 'aktif' : '' ?>" href="?page=education">
-                            <i class="fa fa-graduation-cap"></i> Pendidikan
+                        <a class="nav-link <?= $currentPage === 'project' ? 'aktif' : '' ?>" href="?page=project">
+                            <i class="fa fa-folder-open"></i> Portfolio
                         </a>
                     </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link <?= $currentPage === 'experience' ? 'aktif' : '' ?>" href="?page=experience">
                             <i class="fa fa-briefcase"></i> Pengalaman
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?= $currentPage === 'message' ? 'aktif' : '' ?>" href="?page=message">
-                            <i class="fa fa-comments"></i> Pesan
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?= $currentPage === 'project' ? 'aktif' : '' ?>" href="?page=project">
-                            <i class="fa fa-folder-open"></i> Portfolio
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?= $currentPage === 'review' ? 'aktif' : '' ?>" href="?page=review">
-                            <i class="fa fa-star"></i> Ulasan
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?= $currentPage === 'service' ? 'aktif' : '' ?>" href="?page=service">
-                            <i class="fa fa-cogs"></i> Servis
-                        </a>
-                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link <?= $currentPage === 'skill' ? 'aktif' : '' ?>" href="?page=skill">
                             <i class="fa fa-lightbulb"></i> Keahlian
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link <?= $currentPage === 'education' ? 'aktif' : '' ?>" href="?page=education">
+                            <i class="fa fa-graduation-cap"></i> Pendidikan
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link <?= $currentPage === 'review' ? 'aktif' : '' ?>" href="?page=review">
+                            <i class="fa fa-star"></i> Ulasan
+                        </a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link <?= $currentPage === 'service' ? 'aktif' : '' ?>" href="?page=service">
+                            <i class="fa fa-cogs"></i> Servis
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link <?= $currentPage === 'message' ? 'aktif' : '' ?>" href="?page=message">
+                            <i class="fa fa-comments"></i> Pesan
+                        </a>
+                    </li>
+                   
                     <li class="nav-item">
                         <a class="nav-link <?= $currentPage === 'type' ? 'aktif' : '' ?>" href="?page=type">
                             <i class="fa fa-list"></i> Tipe
