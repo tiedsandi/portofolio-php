@@ -1,6 +1,6 @@
 <?php 
-    $query = mysqli_query($conn, "SELECT * FROM types 
-            ORDER BY type_name ASC
+    $query = mysqli_query($conn, "SELECT * FROM skills 
+            ORDER BY skill_name ASC
     ");
 
     $rows = mysqli_fetch_all($query, MYSQLI_ASSOC);
@@ -8,10 +8,10 @@
     if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
 
-    $query = "DELETE FROM types WHERE id = $id";
+    $query = "DELETE FROM skills WHERE id = $id";
     mysqli_query($conn, $query);
 
-    header("Location: ?page=type&status=hapus");
+    header("Location: ?page=skill&status=hapus");
     exit();
     }
 ?>
@@ -19,8 +19,8 @@
 <div class="about">
   <div class="content-inner">
     <div class="content-header d-flex justify-content-between">
-        <h2>Tipe</h2>
-        <a href="?page=add-edit_type" class="btn ">Buat</a>
+        <h2>Keahlian</h2>
+        <a href="?page=add-edit_skill" class="btn ">Buat</a>
     </div>
 
     <?php 
@@ -42,7 +42,7 @@
       <thead>
           <tr>
               <th>No</th>
-              <th>Tipe</th>
+              <th>Keahlian</th>
               <th>Aksi</th>
           </tr>
       </thead>
@@ -53,10 +53,10 @@
           ?>
               <tr>
                   <td><?php echo $no++ ?></td>
-                  <td><?php echo $row['type_name'] ?></td>
+                  <td><?php echo $row['skill_name'] ?></td>
                   <td>
-                      <a class="btn  btn-sm" style="background-color:white; border: 1px solid #FF6F61" href="?page=add-edit_type&id=<?php echo $row['id'] ?>">Edit</a>
-                      <a class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin delete ?')" href="?page=type&delete=<?php echo $row['id'] ?>">Delete</a>
+                      <a class="btn  btn-sm" style="background-color:white; border: 1px solid #FF6F61" href="?page=add-edit_skill&id=<?php echo $row['id'] ?>">Edit</a>
+                      <a class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin delete ?')" href="?page=skill&delete=<?php echo $row['id'] ?>">Delete</a>
                   </td>
               </tr>
 
